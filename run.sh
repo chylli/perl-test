@@ -2,10 +2,11 @@
 BINARY=~/work/git/regentmarkets
 PERL=$BINARY/perl
 CPAN=$BINARY/localcpan
-for v in v5.14.4-v2 v5.14.4-v3 v5.22.2-v2 v5.22.2-v3 v.24.0-v2 v5.24.0-v3
+for v in v5.14.4-v2 v5.14.4-v3 v5.22.2-v2 v5.22.2-v3 v5.24.0-v2 v5.24.0-v3
+#for v in v5.24.0-v2
 do
-    "(cd $PERL && git checkout chylli/$v)"
-    "(cd $CPAN && git checkout chylli/$v)"
+    (cd $PERL && git checkout chylli/$v)
+    (cd $CPAN && git checkout chylli/$v)
     for d in `ls`
     do
         if [ -d $d ] && [ -f $d/test.pl ]
