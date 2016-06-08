@@ -11,7 +11,9 @@ my $VAR1;
 for my $f (@files){
   my $string = read_file($f);
   #print $string;
-  $results{$f} = eval $string;
+  my $k = $f;
+  $k =~ s{.*/}{};
+  $results{$k} = eval $string;
 }
 
 cmpthese(\%results);
