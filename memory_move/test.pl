@@ -10,7 +10,7 @@ my $out;
 my $null = IO::Null->new;
 my $stdout = select($null);
 
-my @a = (0) x 1024;
+my @a = (0) x 1000;
 sub test {
   my @b = ([@a]);
   for my $i (1..10){
