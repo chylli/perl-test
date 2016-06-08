@@ -7,6 +7,7 @@ for v in v5.14.4-v2 v5.14.4-v3 v5.22.2-v2 v5.22.2-v3 v5.24.0-v2 v5.24.0-v3
 do
     (cd $PERL && git checkout chylli/$v)
     (cd $CPAN && git checkout chylli/$v)
+    perl -v | grep 'version'
     for d in `ls`
     do
         if [ -d $d ] && [ -f $d/test.pl ]
